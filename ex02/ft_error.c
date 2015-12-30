@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:38:22 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 14:35:02 by nhuber           ###   ########.fr       */
+/*   Updated: 2015/12/30 17:35:57 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_puterror(char *str)
 	}
 }
 
-int	ft_display_error(int ac)
+int		ft_display_error(int ac)
 {
 	if (ac == 2)
 	{

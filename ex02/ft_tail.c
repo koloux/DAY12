@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/29 18:18:30 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 17:03:35 by nhuber           ###   ########.fr       */
+/*   Updated: 2015/12/30 17:41:29 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_intro(char *str)
 	ft_putstr(" <==\n");
 }
 
-int	ft_c_option(char *option)
+int		ft_c_option(char *option)
 {
 	char	*str;
 
 	str = ++option;
-	return (ft_atoi(++str));	
+	return (ft_atoi(++str));
 }

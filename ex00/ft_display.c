@@ -6,18 +6,18 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:17:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/25 19:35:33 by nhuber           ###   ########.fr       */
+/*   Updated: 2015/12/30 17:24:14 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_header.h"
 
-int	main(int ac, char **av)
+int		main(int ac, char **av)
 {
-	int fileds;
-	int ret;
-	char buffer[BUF_SIZE + 1];
-	
+	int		fileds;
+	int		ret;
+	char	buffer[BUF_SIZE + 1];
+
 	if ((fileds = ft_open_n_error(av[1])) == 1)
 	{
 		ft_putstr("error");

@@ -6,13 +6,13 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:38:22 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/29 17:50:29 by nhuber           ###   ########.fr       */
+/*   Updated: 2015/12/30 17:30:54 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_header.h"
 
-int	ft_display_error(int ac)
+int		ft_display_error(int ac)
 {
 	if (ac == 1)
 	{
@@ -22,7 +22,7 @@ int	ft_display_error(int ac)
 	return (0);
 }
 
-int	ft_open_n_error(char *file_name)
+int		ft_open_n_error(char *file_name)
 {
 	int fileds;
 
@@ -38,7 +38,7 @@ int	ft_open_n_error(char *file_name)
 
 void	ft_read(int fileds)
 {
-	int	ret;
+	int		ret;
 	char	buffer[BUF_SIZE + 1];
 
 	while ((ret = read(fileds, buffer, BUF_SIZE)) != 0)
