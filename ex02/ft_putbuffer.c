@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_header.h                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/21 19:05:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/25 19:29:35 by nhuber           ###   ########.fr       */
+/*   Created: 2015/12/30 15:03:43 by nhuber            #+#    #+#             */
+/*   Updated: 2015/12/30 17:09:02 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "my_header.h"
 
-#ifndef MY_HEADER_H
-# define MY_HEADER_H
-# include <fcntl.h>
-# include <unistd.h>
-# define BUF_SIZE 10
+void	ft_putbuffer(char *buffer, int size, int option)
+{
+	int i;
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int	ft_display_error(int ac);
-int	ft_open_n_error(char *file_name);
-
-#endif
+	if (option >= size)
+	{
+		ft_putstr(buffer);
+		return ;
+	}
+	else
+	{
+		i = size - option;
+		while (buffer[i])
+		{
+			ft_putchar(buffer[i]);
+			i++;
+		}
+	}
+}

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_header.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/21 19:05:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/25 19:29:35 by nhuber           ###   ########.fr       */
+/*   Created: 2015/10/26 09:25:25 by nhuber            #+#    #+#             */
+/*   Updated: 2015/10/26 09:27:00 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 
-#ifndef MY_HEADER_H
-# define MY_HEADER_H
-# include <fcntl.h>
-# include <unistd.h>
-# define BUF_SIZE 10
-
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int	ft_display_error(int ac);
-int	ft_open_n_error(char *file_name);
-
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

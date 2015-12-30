@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:05:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/25 19:29:35 by nhuber           ###   ########.fr       */
+/*   Updated: 2015/12/26 10:43:00 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 # define MY_HEADER_H
 # include <fcntl.h>
 # include <unistd.h>
-# define BUF_SIZE 10
+# include <errno.h>
+# define BUF_SIZE 30000 
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_read(int fileds);
 int	ft_display_error(int ac);
 int	ft_open_n_error(char *file_name);
 

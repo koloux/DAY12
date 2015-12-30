@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_header.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/21 19:05:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/25 19:29:35 by nhuber           ###   ########.fr       */
+/*   Created: 2015/10/19 18:22:16 by nhuber            #+#    #+#             */
+/*   Updated: 2015/10/26 11:46:38 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef MY_HEADER_H
-# define MY_HEADER_H
-# include <fcntl.h>
-# include <unistd.h>
-# define BUF_SIZE 10
-
 void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int	ft_display_error(int ac);
-int	ft_open_n_error(char *file_name);
 
-#endif
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}

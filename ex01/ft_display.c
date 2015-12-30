@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_header.h                                        :+:      :+:    :+:   */
+/*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/21 19:05:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/25 19:29:35 by nhuber           ###   ########.fr       */
+/*   Created: 2015/12/21 18:17:37 by nhuber            #+#    #+#             */
+/*   Updated: 2015/12/30 10:32:19 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "my_header.h"
 
-#ifndef MY_HEADER_H
-# define MY_HEADER_H
-# include <fcntl.h>
-# include <unistd.h>
-# define BUF_SIZE 10
-
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int	ft_display_error(int ac);
-int	ft_open_n_error(char *file_name);
-
-#endif
+int	main(int ac, char **av)
+{
+	int	fileds;
+	int	i;
+	
+	if (ft_display_error(ac) == 1)
+		return (0);
+	i = 1;
+	while (i < ac)
+	{
+		if ((fileds = ft_open_n_error(av[i])) != 0)
+			return (0);
+		ft_read(fileds);
+		if (close(fileds) == -1)
+		{
+			write(2, "close error", 11);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}

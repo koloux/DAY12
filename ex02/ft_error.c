@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_header.h                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/21 19:05:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/25 19:29:35 by nhuber           ###   ########.fr       */
+/*   Created: 2015/12/21 19:38:22 by nhuber            #+#    #+#             */
+/*   Updated: 2015/12/30 14:35:02 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "my_header.h"
 
-#ifndef MY_HEADER_H
-# define MY_HEADER_H
-# include <fcntl.h>
-# include <unistd.h>
-# define BUF_SIZE 10
+void	ft_puterror(char *str)
+{
+	int i;
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int	ft_display_error(int ac);
-int	ft_open_n_error(char *file_name);
+	i = 0;
+	while (str[i])
+	{
+		write(2, &str[i], 1);
+		i++;
+	}
+}
 
-#endif
+int	ft_display_error(int ac)
+{
+	if (ac == 2)
+	{
+		ft_puterror("File name missing.\n");
+		return (1);
+	}
+	return (0);
+}
