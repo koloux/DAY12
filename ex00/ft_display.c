@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:17:37 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/04 10:49:18 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 11:33:21 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		main(int ac, char **av)
 {
-	int	fileds;
-	int	ret;
+	int		fileds;
+	int		ret;
 	char	buffer[BUF_SIZE + 1];
 
 	if (ft_display_error(ac) == 1)
