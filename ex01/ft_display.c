@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:17:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 17:26:59 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 10:18:49 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ int		main(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		if ((fileds = ft_open_n_error(av[i])) != 0)
-			return (0);
-		ft_read(fileds);
-		if (close(fileds) == -1)
+		if ((fileds = ft_open_n_error(av[i])) >= 0)
 		{
-			write(2, "close error", 11);
-			return (1);
+			ft_read(fileds);
+			if (close(fileds) == -1)
+			{
+				write(2, "close() error\n", 15);
+				return (1);
+			}
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:17:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 17:41:09 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 11:22:47 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int		ft_file_size(char *file_name)
 
 	size = 0;
 	if ((fileds = open(file_name, O_RDONLY)) == -1)
-	{
-		ft_puterror("open) error\n");
 		return (-1);
-	}
 	else
 	{
 		while ((ret = read(fileds, buffer, BUF_SIZE)) != 0)
@@ -34,7 +31,7 @@ int		ft_file_size(char *file_name)
 		}
 		if (close(fileds) == -1)
 		{
-			ft_puterror("close() error\n");
+			ft_puterror(file_name);
 			return (-1);
 		}
 		return (size);
@@ -48,15 +45,11 @@ void	ft_display_file(char *file_name, int option)
 	int		size;
 	char	buffer[ft_file_size(file_name) + 1];
 
-	size = ft_file_size(file_name);
-	fileds = open(file_name, O_RDONLY);
-	if (fileds == -1)
-	{
-		ft_puterror("open() error\n");
-		return ;
-	}
+	if ((fileds = open(file_name, O_RDONLY)) == -1)
+		ft_puterror(file_name);
 	else
 	{
+		size = ft_file_size(file_name);
 		while ((ret = read(fileds, buffer, size)) != 0)
 		{
 			buffer[ret] = '\0';
@@ -64,8 +57,7 @@ void	ft_display_file(char *file_name, int option)
 		}
 		if (close(fileds) == -1)
 		{
-			ft_puterror("close() error\n");
-			return ;
+			ft_puterror(file_name);
 		}
 	}
 }

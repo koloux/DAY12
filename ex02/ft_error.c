@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:38:22 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 17:35:57 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 11:17:01 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 void	ft_puterror(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(2, &str[i], 1);
-		i++;
-	}
+	write(2, "tail: ", 6);
+	write(2, str, ft_strlen(str));
+	write(2, ": No such file or directory\n", 29);
 }
 
 int		ft_display_error(int ac)
 {
-	if (ac == 2)
+	if (ac == 3)
 	{
 		ft_puterror("File name missing.\n");
 		return (1);

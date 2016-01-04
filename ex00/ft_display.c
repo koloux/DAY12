@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:17:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 17:24:14 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 10:49:18 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 int		main(int ac, char **av)
 {
-	int		fileds;
-	int		ret;
+	int	fileds;
+	int	ret;
 	char	buffer[BUF_SIZE + 1];
 
-	if ((fileds = ft_open_n_error(av[1])) == 1)
-	{
-		ft_putstr("error");
-		return (0);
-	}
 	if (ft_display_error(ac) == 1)
-		return (0);
+		return (1);
+	if ((fileds = open(av[1], O_RDONLY)) == -1)
+	{
+		write(2, "open() error\n", 14);
+		return (1);
+	}
 	while ((ret = read(fileds, buffer, BUF_SIZE)) != 0)
 	{
 		buffer[ret] = '\0';
 		ft_putstr(buffer);
 	}
-	if (close(fileds) == -1)
+	if ((close(fileds)) == -1)
 	{
-		write(2, "close error", 11);
+		write(2, "close() error\n", 15);
 		return (1);
 	}
 	return (0);

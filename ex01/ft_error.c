@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:38:22 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 17:30:54 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 10:33:28 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ int		ft_open_n_error(char *file_name)
 	fileds = open(file_name, O_RDONLY);
 	if (fileds == -1)
 	{
-		write(2, "open error", 10);
-		return (1);
+		write(2, "cat: ", 5);
+		write(2, file_name, ft_strlen(file_name));
+		write(2, ": No such file or directory\n", 29);
+		return (-1);
 	}
 	else
 		return (fileds);

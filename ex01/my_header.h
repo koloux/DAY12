@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:05:37 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/30 17:30:13 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 10:29:27 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void	ft_putstr(char *str);
 void	ft_read(int fileds);
 int		ft_display_error(int ac);
 int		ft_open_n_error(char *file_name);
+int	ft_strlen(char *str);
 
 #endif

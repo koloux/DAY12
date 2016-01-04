@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:38:22 by nhuber            #+#    #+#             */
-/*   Updated: 2015/12/29 17:51:01 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/04 10:43:55 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,4 @@ int	ft_display_error(int ac)
 		return (1);
 	}
 	return (0);
-}
-
-int	ft_open_n_error(char *file_name)
-{
-	int fileds;
-
-	fileds = open(file_name, O_RDONLY);
-	if (fileds == -1)
-	{
-		write(2, "error", 12);
-		return (1);
-	}
-	else
-		return (fileds);
 }
