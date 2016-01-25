@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 14:16:03 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/25 14:53:38 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/25 16:39:41 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ void	ft_list_push_back(t_buffer_list **begin_list, char *buffer)
 
 	elem = *begin_list;
 	if (elem == NULL)
-		*begin_list = ft_create_elem(buffer, ft_strlen(buffer), 0);
+		*begin_list = ft_create_elem(buffer, ft_strlen(buffer));
 	else
 	{
 		while (elem->next != NULL)
+		{
 			elem = elem->next;
-		elem->next = ft_create_elem(buffer, ft_strlen(buffer), 0);
+		}
+		elem->next = ft_create_elem(buffer, ft_strlen(buffer));
 	}
 }

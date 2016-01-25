@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 14:02:20 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/22 22:41:25 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/25 16:40:03 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <errno.h>
 # include <stdio.h>
-# define BUF_SIZE 17
 
 typedef struct			s_buffer_list
 {
@@ -39,7 +38,7 @@ char	*ft_strconcat(char *s1, char *s2);
 char	*ft_error_elem(char *file_name);
 
 //list
-t_buffer_list	*ft_create_elem(char *buffer, int ret, int error);
+t_buffer_list	*ft_create_elem(char *buffer, int ret);
 void		ft_create_list(char *file_name, t_buffer_list **begin_list);
 void		ft_list_push_back(t_buffer_list **begin_list, char *buffer);
 
