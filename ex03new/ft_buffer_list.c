@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 14:12:36 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/22 15:19:06 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/25 14:48:48 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,32 +29,21 @@ void 		ft_create_list(char *file_name, t_buffer_list **begin_list)
 {
 	int		fd;
 	int		ret;
-	char		buffer[BUF_SIZE];
-	t_buffer_list	*elem;
+	char		*buffer;
 	t_buffer_list	*head;
-	t_buffer_list	*cur;
 
-	cur = NULL;
 	head = NULL;
 	if ((fd = open(file_name, O_RDONLY)) == -1)
 		*begin_list = ft_create_elem(ft_error_elem(file_name), 0, 1);
 	else
 	{
+		buffer = (char *)malloc(sizeof(char) * 17);
 		while ((ret = read(fd, buffer, 16)) != 0)
 		{
 			buffer[ret] = '\0';
-			elem = ft_create_elem(buffer, ret, 0);
-			if (cur == NULL)
-			{
-				cur = elem;
-				head = cur;
-			}
-			else
-			{
-				cur->next = elem;
-				cur = elem;
-			}
+			ft_list_push_back(&head, buffer);
 		}
+		free(buffer);
 		if (close(fd) == -1)
 			*begin_list = ft_create_elem(ft_error_elem(file_name), 0, 1);
 	}
