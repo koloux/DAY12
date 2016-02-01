@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 14:40:48 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/21 17:15:42 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/01 20:21:37 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 char	*ft_strconcat(char *s1, char *s2)
 {
 	char	*ret;
-	int	len1;
-	int	len2;
-	int	i;
-	int	j;
+	int		len1;
+	int		len2;
+	int		i;
+	int		j;
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);

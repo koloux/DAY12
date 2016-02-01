@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 18:36:41 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/27 14:16:16 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/01 20:22:01 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strcreatecpy(char *src)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(src) + 1)))
 		return (NULL);

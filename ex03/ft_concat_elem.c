@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:13:06 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/29 14:46:30 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/01 19:57:36 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_star_elem(t_buffer_list **begin_list)
 
 void	ft_same_line(t_buffer_list **begin_list)
 {
-	t_buffer_list *cur;
-	
+	t_buffer_list	*cur;
+
 	cur = *begin_list;
 	while (cur->next != NULL)
 	{

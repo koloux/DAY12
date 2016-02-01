@@ -6,13 +6,13 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 14:12:36 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/01 18:10:51 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/01 19:56:01 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void 		ft_create_list(char *file_name, t_buffer_list **begin_list)
+void	ft_create_list(char *file_name, t_buffer_list **begin_list)
 {
 	int	fd;
 
@@ -26,9 +26,9 @@ void 		ft_create_list(char *file_name, t_buffer_list **begin_list)
 	}
 }
 
-void		ft_read(int fd, t_buffer_list **begin_list)
+void	ft_read(int fd, t_buffer_list **begin_list)
 {
-	int		ret;
+	int			ret;
 	static int	c_read;
 	char		*buffer;
 
