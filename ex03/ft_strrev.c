@@ -6,11 +6,11 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 13:25:40 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/18 20:00:06 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/28 14:52:06 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_header.h"
+#include "header.h"
 
 char	*ft_strrev(char *str)
 {

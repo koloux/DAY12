@@ -5,29 +5,76 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/30 14:35:14 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/20 14:48:59 by nhuber           ###   ########.fr       */
+/*   Created: 2016/01/21 14:11:38 by nhuber            #+#    #+#             */
+/*   Updated: 2016/02/01 19:21:14 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_header.h"
+#include "header.h"
+
 
 int	main(int ac, char **av)
 {
-	
-	(void)ac;
-	(void)av;
+	t_buffer_list *head;
 	int i;
-	t_list	*elem;
+	int hex;
 
-	i = 0;
-	while (i < 100)
+	i = (ft_strcmp(av[1], "-C") == 0) ? 2 : 1;
+	hex = 0;
+	head = NULL;
+	while (i < ac)
 	{
-		ft_print_hexcount(i);
-		ft_putchar('\n');
-		i += 16;
+		ft_create_list(av[i], &head);
+		i++;
 	}
-	ft_create_buffer_list(av[1], elem);
-	ft_putstr(elem->str);
+	ft_bad_fd(&head, ac, av);
+	ft_star_elem(&head);
+	ft_same_line(&head);
+	ft_print(head, av);
+/*	while (head != NULL)
+	{
+		i = 0;
+		if (head->error != 2)
+		{
+			if (head->error == 3)
+			{
+				ft_putstr(head->hex_buffer);
+				hex += head->ret;
+			}
+			else
+			{
+				ft_print_hexcount(hex);
+				hex += head->ret;
+				ft_putstr("  ");
+				while (head->hex_buffer[i])
+				{	
+					ft_putstr(ft_itoa_base(head->hex_buffer[i], 16));
+					ft_putchar(' ');
+					if (i == 7 || i == 15)
+						ft_putchar(' ');
+					i++;
+				}
+				if (head->ret < 16)
+				{
+					j = head->ret;
+					while (j < 16)
+					{
+						ft_putstr("   ");
+						j++;
+						if (j == 7 || j == 15)
+							ft_putchar(' ');
+					}
+				}	
+				ft_putstr(head->char_buffer);
+				ft_putchar('\n');
+			}
+		}
+		else
+			write(head->error, head->hex_buffer, head->ret);
+		head = head->next;
+	}
+	ft_print_hexcount(hex);
+	ft_putchar('\n');
+*/
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 14:19:07 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/04 14:23:57 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/27 14:43:20 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_header.h"
+#include "header.h"
 
 void	ft_putnbr(int nb)
 {

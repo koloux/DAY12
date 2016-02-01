@@ -6,11 +6,11 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 10:27:32 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/04 10:29:10 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/21 14:48:50 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_header.h"
+#include "header.h"
 
 int	ft_strlen(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/26 09:25:25 by nhuber            #+#    #+#             */
-/*   Updated: 2015/10/26 09:27:00 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/01/25 19:23:52 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "header.h"
 
 void	ft_putchar(char c)
 {

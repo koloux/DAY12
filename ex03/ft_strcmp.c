@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexdump.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/18 16:07:55 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/18 23:51:52 by nhuber           ###   ########.fr       */
+/*   Created: 2016/01/27 14:32:13 by nhuber            #+#    #+#             */
+/*   Updated: 2016/01/27 14:39:13 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_header.h"
+#include "header.h"
 
-void	ft_print_hexcount(int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	*hexcount;
-	int	len;
+	int i;
 
-	hexcount = ft_itoa_base(n, 16);
-	if ((len = ft_strlen(hexcount)) < 9)
+	i = 0;
+	while (s1[i] && s2[i])
 	{
-		while (len < 8)
-		{
-			ft_putnbr(0);
-			len++;
-		}
+		if (s1[i] != s2[i])
+			return (1);
+		i++;
 	}
-	ft_putstr(hexcount);
+	return (0);
 }

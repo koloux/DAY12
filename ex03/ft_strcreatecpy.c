@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcreatecpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/19 18:22:16 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/21 14:48:40 by nhuber           ###   ########.fr       */
+/*   Created: 2016/01/25 18:36:41 by nhuber            #+#    #+#             */
+/*   Updated: 2016/01/27 14:16:16 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_putstr(char *str)
+char	*ft_strcreatecpy(char *src)
 {
-	int i;
+	char	*str;
+	int	i;
 
+	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(src) + 1)))
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	while (src[i])
 	{
-		ft_putchar(str[i]);
+		str[i] = src[i];
 		i++;
 	}
+	str[i] = '\0';
+	return (str);
 }
