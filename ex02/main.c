@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/30 14:35:14 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/04 11:27:54 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/01 22:52:27 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main(int ac, char **av)
 			ft_intro(av[i]);
 		ft_display_file(av[i], option);
 		i++;
+		if (i != ac)
+			ft_putchar('\n');
 	}
 	return (0);
 }

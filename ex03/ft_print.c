@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 18:18:47 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/01 22:00:02 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/01 23:08:52 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,10 @@ void	ft_print_space(t_buffer_list *elem)
 	int j;
 
 	j = elem->ret;
+	ft_putstr("  ");
 	while (j < 16)
 	{
 		ft_putstr("   ");
-		if (j == 7)
-			ft_putchar(' ');
 		j++;
 	}
 	ft_putstr(elem->char_buffer);
@@ -64,10 +63,10 @@ void	ft_print_hex_buffer(char *hex_buffer)
 	while (hex_buffer[i])
 	{
 		ft_putstr(ft_itoa_base(hex_buffer[i], 16));
-		ft_putchar(' ');
+		if (i != 15)
+			ft_putchar(' ');
 		if (i == 7)
 			ft_putchar(' ');
 		i++;
 	}
-	ft_putstr(" ");
 }
