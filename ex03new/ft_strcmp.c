@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 13:25:40 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/28 14:52:06 by nhuber           ###   ########.fr       */
+/*   Created: 2016/01/27 14:32:13 by nhuber            #+#    #+#             */
+/*   Updated: 2016/01/27 14:39:13 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-char	*ft_strrev(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-	int	len;
-	char	tmp;
+	int i;
 
 	i = 0;
-	len = ft_strlen(str) - 1;
-	while (i <= len / 2)
+	while (s1[i] && s2[i])
 	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
+		if (s1[i] != s2[i])
+			return (1);
 		i++;
-		len--;
 	}
-	return (str);
+	return (0);
 }

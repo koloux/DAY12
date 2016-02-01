@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strcreatecpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 13:25:40 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/28 14:52:06 by nhuber           ###   ########.fr       */
+/*   Created: 2016/01/25 18:36:41 by nhuber            #+#    #+#             */
+/*   Updated: 2016/01/27 14:16:16 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-char	*ft_strrev(char *str)
+char	*ft_strcreatecpy(char *src)
 {
+	char	*str;
 	int	i;
-	int	len;
-	char	tmp;
 
+	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(src) + 1)))
+		return (NULL);
 	i = 0;
-	len = ft_strlen(str) - 1;
-	while (i <= len / 2)
+	while (src[i])
 	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
+		str[i] = src[i];
 		i++;
-		len--;
 	}
+	str[i] = '\0';
 	return (str);
 }

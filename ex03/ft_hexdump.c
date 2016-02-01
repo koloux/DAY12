@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_hexdump.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 13:25:40 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/28 14:52:06 by nhuber           ###   ########.fr       */
+/*   Created: 2016/01/18 16:07:55 by nhuber            #+#    #+#             */
+/*   Updated: 2016/01/18 23:51:52 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "my_header.h"
 
-char	*ft_strrev(char *str)
+void	ft_print_hexcount(int n)
 {
-	int	i;
+	char	*hexcount;
 	int	len;
-	char	tmp;
 
-	i = 0;
-	len = ft_strlen(str) - 1;
-	while (i <= len / 2)
+	hexcount = ft_itoa_base(n, 16);
+	if ((len = ft_strlen(hexcount)) < 9)
 	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-		i++;
-		len--;
+		while (len < 8)
+		{
+			ft_putnbr(0);
+			len++;
+		}
 	}
-	return (str);
+	ft_putstr(hexcount);
 }

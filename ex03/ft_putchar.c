@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 13:25:40 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/28 14:52:06 by nhuber           ###   ########.fr       */
+/*   Created: 2015/10/26 09:25:25 by nhuber            #+#    #+#             */
+/*   Updated: 2015/10/26 09:27:00 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include <unistd.h>
 
-char	*ft_strrev(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-	int	len;
-	char	tmp;
-
-	i = 0;
-	len = ft_strlen(str) - 1;
-	while (i <= len / 2)
-	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-		i++;
-		len--;
-	}
-	return (str);
+	write(1, &c, 1);
 }

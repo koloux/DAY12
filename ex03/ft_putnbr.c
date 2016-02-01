@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 13:25:40 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/28 14:52:06 by nhuber           ###   ########.fr       */
+/*   Created: 2016/01/04 14:19:07 by nhuber            #+#    #+#             */
+/*   Updated: 2016/01/04 14:23:57 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "my_header.h"
 
-char	*ft_strrev(char *str)
+void	ft_putnbr(int nb)
 {
-	int	i;
-	int	len;
-	char	tmp;
-
-	i = 0;
-	len = ft_strlen(str) - 1;
-	while (i <= len / 2)
+	if (nb < 0)
 	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-		i++;
-		len--;
+		ft_putchar('-');
+		nb = -nb;
 	}
-	return (str);
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
 }

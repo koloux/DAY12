@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 13:25:40 by nhuber            #+#    #+#             */
-/*   Updated: 2016/01/28 14:52:06 by nhuber           ###   ########.fr       */
+/*   Created: 2015/12/30 14:35:14 by nhuber            #+#    #+#             */
+/*   Updated: 2016/01/20 14:48:59 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "my_header.h"
 
-char	*ft_strrev(char *str)
+int	main(int ac, char **av)
 {
-	int	i;
-	int	len;
-	char	tmp;
+	
+	(void)ac;
+	(void)av;
+	int i;
+	t_list	*elem;
 
 	i = 0;
-	len = ft_strlen(str) - 1;
-	while (i <= len / 2)
+	while (i < 100)
 	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-		i++;
-		len--;
+		ft_print_hexcount(i);
+		ft_putchar('\n');
+		i += 16;
 	}
-	return (str);
+	ft_create_buffer_list(av[1], elem);
+	ft_putstr(elem->str);
+	return (0);
 }
