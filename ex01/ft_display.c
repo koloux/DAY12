@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:17:37 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/01 22:18:25 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/02 00:01:30 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main(int ac, char **av)
 			ft_read(fileds);
 			if (close(fileds) == -1)
 			{
-				write(2, "close() error\n", 15);
+				write(2, "close() error\n", 14);
 				return (1);
 			}
 		}
