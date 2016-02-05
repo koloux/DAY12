@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 14:02:20 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/02 16:09:22 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/04 15:40:46 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void			ft_print_hexcount(int n, char *option);
 int			ft_print(t_buffer_list *begin_list, char **av);
 int			ft_print_c(t_buffer_list *begin_list, char **av);
 void			ft_print_hex_buffer(char *hex_buffer);
+void			ft_print_hex_c(char *hex_buffer);
 void			ft_print_space(t_buffer_list *elem);
 char			*ft_char_buffer(char *buffer);
 void			ft_buffer_cpy(char *buffer, char *mod_buffer);
