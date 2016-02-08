@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 19:38:22 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/02 00:01:28 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/08 12:25:10 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_open_n_error(char *file_name)
 
 void	ft_read(int fileds)
 {
-	int	ret;
+	int		ret;
 	char	buffer[BUF_SIZE + 1];
 
 	while ((ret = read(fileds, buffer, BUF_SIZE)) != 0)

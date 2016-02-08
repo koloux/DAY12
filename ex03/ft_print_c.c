@@ -6,13 +6,13 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 15:55:56 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/05 14:01:20 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/08 12:28:46 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	ft_print_c(t_buffer_list *begin_list, char **av)
+int		ft_print_c(t_buffer_list *begin_list, char **av)
 {
 	int hex;
 
@@ -28,7 +28,7 @@ int	ft_print_c(t_buffer_list *begin_list, char **av)
 			else
 			{
 				ft_print_hexcount(hex, av[1]);
-				ft_print_hex_c(begin_list->hex_buffer);	
+				ft_print_hex_c(begin_list->hex_buffer);
 				ft_print_space(begin_list);
 				ft_putchar('\n');
 			}
@@ -71,5 +71,4 @@ void	ft_print_hex_c(char *hex_buffer)
 			ft_putchar(' ');
 		i++;
 	}
-
 }
