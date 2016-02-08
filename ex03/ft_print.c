@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 18:18:47 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/05 14:01:22 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/08 13:30:16 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_print(t_buffer_list *begin_list, char **av)
 			{
 				ft_print_hexcount(hex, av[1]);
 				ft_print_hex_buffer(begin_list->hex_buffer);
+				ft_print_space(begin_list);
 				ft_putchar('\n');
 			}
 			hex += begin_list->ret;

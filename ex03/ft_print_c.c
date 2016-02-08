@@ -6,7 +6,7 @@
 /*   By: nhuber <nhuber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 15:55:56 by nhuber            #+#    #+#             */
-/*   Updated: 2016/02/08 12:28:46 by nhuber           ###   ########.fr       */
+/*   Updated: 2016/02/08 13:30:09 by nhuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		ft_print_c(t_buffer_list *begin_list, char **av)
 				ft_print_hexcount(hex, av[1]);
 				ft_print_hex_c(begin_list->hex_buffer);
 				ft_print_space(begin_list);
+				ft_putstr("  ");
+				ft_putstr(begin_list->char_buffer);
 				ft_putchar('\n');
 			}
 			hex += begin_list->ret;
@@ -52,8 +54,6 @@ void	ft_print_space(t_buffer_list *elem)
 			ft_putstr("   ");
 		i++;
 	}
-	ft_putstr("  ");
-	ft_putstr(elem->char_buffer);
 }
 
 void	ft_print_hex_c(char *hex_buffer)
